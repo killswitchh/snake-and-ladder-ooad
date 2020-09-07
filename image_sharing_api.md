@@ -50,7 +50,7 @@ curl --location --request POST 'https://image_share.com/user/
 {
     "message": "User has been created",
     "details": {
-        "user_id" : <randomly generated>,
+        "user_id" : "<randomlygenerated>",
         "user_name": "user",
         "no_of_pics" : 0
     }
@@ -83,18 +83,18 @@ curl --location --request GET 'https://image_share.com/users/'
 ```json
 {
     "message": " 3 Users Found",
-    "Users" : [
-        "data" : {
+    "Users": [
+        {
             "user_id" : "1b2h1b2h1k3o",
             "user_name" : "xyz",
             "no_of_pics" : 20
-        }
-        "data" : {
+        },
+        {
             "user_id" : "1b2h1b2h1k5o",
             "user_name" : "xqz",
             "no_of_pics" : 10
-        }
-        "data" : {
+        },
+        {
             "user_id" :"1b2h1b2h1k7o",
             "user_name" : "abc",
             "no_of_pics" : 15
@@ -126,8 +126,8 @@ curl --location --request GET 'https://image_share.com/users/<user_id>'
 ```json
 {
     "message": "User Found",
-    "data" : {
-        "user_id" : <user_id>,
+    "data": {
+        "user_id" : "<user_id>",
         "user_name" : "xyz",
         "no_of_pics" : 20
     }
@@ -172,7 +172,7 @@ curl --location --request PATCH 'https://image_share.com/user/<user_id>
 {
     "message": "User Updated",
     "details": {
-        "user_id" : <user_id>,
+        "user_id" : "<user_id>",
         "user_name": "updated_user_name",
         "no_of_pics" : 0
     }
@@ -228,7 +228,7 @@ curl --location --request POST 'https://image_share.com/post/<user_id>
 ### Request Body
 ```json
 {
-    "image"  : <BINARY FILE>,
+    "image"  : "<BINARY_FILE>",
     "caption" : "Hello"
 }
 ```
@@ -240,8 +240,8 @@ curl --location --request POST 'https://image_share.com/post/<user_id>
 {
     "message": "Picture has been posted",
     "details": {
-        "post_id" : <randomly generated>,
-        "user_id": <user_id>,
+        "post_id" : "<randomly_generated>",
+        "user_id": "<user_id>",
         "caption" : "Hello",
         "likes" : 0
     }
@@ -279,21 +279,21 @@ curl --location --request GET 'https://image_share.com/all_posts/<user_id>'
 {
     "message": " 3 posts Found for <user_id>",
     "Posts" : [
-        "details": {
+        {
             "post_id" : "1b2h1b2h1k3o",
-            "user_id": <user_id>,
+            "user_id": "<user_id>",
             "caption" : "Hello",
             "likes" : 12
-        }
-        "details": {
+        },
+        {
             "post_id" : "1b2h1b2h1k32o",
-            "user_id": <user_id>,
+            "user_id": "<user_id>",
             "caption" : "Helloow",
             "likes" : 2
-        }
-        "details": {
+        },
+        {
             "post_id" : "1b2h1b2h1k32t",
-            "user_id": <user_id>,
+            "user_id": "<user_id>",
             "caption" : "Hello2",
             "likes" : 23
         }
@@ -325,8 +325,8 @@ curl --location --request GET 'https://image_share.com/posts/<post_id>'
 {
     "message": "post Found",
     "data" : {
-        "post_id" : <post_id>,
-        "user_id": <user_id>,
+        "post_id" : "<post_id>",
+        "user_id": "<user_id>",
         "caption" : "Hello2",
         "likes" : 23
     }
@@ -369,9 +369,9 @@ curl --location --request PATCH 'https://image_share.com/post/<post_id>
 {
     "message": "post Updated",
     "details": {
-        "post_id" : <post_id>,
+        "post_id" : "<post_id>",
         "user_id": "aksj23kajsd",
-        "caption": "updated_caption"
+        "caption": "updated_caption",
         "likes" : 23,
 
     }
@@ -444,7 +444,7 @@ curl --location --request PATCH 'https://image_share.com/post/like_post/<post_id
 {
     "message": "post Liked",
     "details": {
-        "post_id" : <post_id>,
+        "post_id" : "<post_id>",
         "likes" : 24,
         "caption": "updated_caption"
     }

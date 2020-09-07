@@ -100,16 +100,16 @@ class Board:
     def __init__(self):
         self.board = [None for x in range(101)]
 
-    def populate(self, snake_positions , ladder_positions ):
+    def populate(self, snakes , ladders ):
 
         #placing snakes
-        for start_point , end_point in snake_positions:
-            snake = Snake(start_point , end_point)
+        for snake in snakes:
+            start_point = snake.get_start_point()
             self.board[start_point] = snake
-            
+
         #placing ladders
-        for start_point , end_point in ladder_positions:
-            ladder = Ladder(start_point , end_point)
+        for ladder in ladders:
+            start_point = ladder.get_start_point()
             self.board[start_point] = ladder
 
         return self.board
@@ -119,17 +119,18 @@ class Game:
     def __init__(self):
         self.winner = None
     
+
     def play(self):
         # hard coded snake and ladder positions
-        snake_positions = [(7,3) , (37,13) , (80,60)]
-        ladder_positions = [(1,27) , (33,60) , (70,79)]
+        snakes = [Snake(7,3) , Snake(37,13) , Snake(80,60)]
+        ladders = [Ladder(1,27) , Ladder(33,60) , Ladder(70,79)]
 
         # hard coded details for 2 players
         players = [ Player("A" , 1), Player("B" , 1)]
         turns = 0
 
         #initializing board and Dice
-        board = Board().populate(snake_positions , ladder_positions)
+        board = Board().populate(snakes , ladders)
         dice = Dice()
         
         # looping till we get a winner
